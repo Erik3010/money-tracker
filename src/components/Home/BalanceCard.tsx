@@ -17,7 +17,7 @@ const BalanceCard = ({ label, balance, type }: BalanceCardProps) => {
   const Icon = isIncome ? ArrowDownCircleIcon : ArrowUpCircleIcon;
 
   return (
-    <div className="overflow-hidden rounded-lg bg-white shadow px-4 py-5 sm:p-4 flex items-center gap-3">
+    <div className="overflow-hidden rounded-lg bg-white border hover:bg-gray-50 shadow-sm px-4 py-5 sm:p-4 flex items-center gap-3 cursor-pointer">
       <Icon
         className={cn("w-7 h-7", isIncome ? "fill-green-600" : "fill-red-600")}
       />

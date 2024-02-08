@@ -15,7 +15,7 @@ const TransactionCard = ({ type }: TransactionCardProps) => {
   const Icon = isIncome ? ArrowDownCircleIcon : ArrowUpCircleIcon;
 
   return (
-    <article className="py-3 flex items-center justify-between">
+    <article className="py-3.5 flex items-center justify-between">
       <div className="flex items-center gap-3">
         <Icon
           className={cn(
@@ -30,7 +30,7 @@ const TransactionCard = ({ type }: TransactionCardProps) => {
           >
             Rp105.000
           </a>
-          <p className="text-xs text-gray-500">Freelance Project</p>
+          <p className="text-xs text-gray-400">Freelance Project</p>
         </div>
       </div>
       <NavLink

@@ -8,8 +8,8 @@ interface RootProps {
 
 const Root = ({ children, showNavbar = true }: RootProps) => {
   return (
-    <main className="bg-gray-100 max-w-[480px] mx-auto">
-      <div className="w-full min-h-screen p-6 pb-20">
+    <main className="bg-white max-w-[480px] mx-auto">
+      <div className="w-full min-h-screen p-6 pb-24">
         {children ?? <Outlet />}
       </div>
       {showNavbar && <Navbar />}

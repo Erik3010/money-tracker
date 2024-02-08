@@ -12,9 +12,9 @@ const TransactionNew = () => {
 
   return (
     <div>
-      <div className="mb-6 space-y-1">
+      <div className="mb-6 space-y-0.5">
         <h1 className="font-semibold text-xl text-gray-900">Add Transaction</h1>
-        <p className="text-xs text-gray-500">
+        <p className="text-xs text-gray-400">
           Create your new transaction by filling these form.
         </p>
       </div>

@@ -21,9 +21,14 @@ const Home = () => {
             <BalanceCard type="outcome" label="Outcome" balance="10.000" />
           </section>
         </div>
-        <section>
-          <div className="mb-2 flex justify-between items-center">
-            <h2 className="font-semibold text-lg">Latest Transactions</h2>
+        <section className="space-y-4">
+          <div className="flex justify-between items-center">
+            <div className="space-y-0.5">
+              <h2 className="font-semibold text-lg">Today's Activity</h2>
+              <p className="text-xs text-gray-400">
+                You've made 5 transactions today
+              </p>
+            </div>
             <NavLink
               to="/transactions"
               className="text-blue-700 hover:underline text-xs font-medium"
@@ -31,7 +36,7 @@ const Home = () => {
               See all transaction
             </NavLink>
           </div>
-          <div className="divide-y divide-gray-200 bg-white shadow-sm ring-1 ring-gray-900/5 rounded-xl px-4">
+          <div className="divide-y divide-gray-100 bg-white border shadow-sm rounded-xl px-4">
             {Array(5)
               .fill(null)
               .map((_, index) => (
