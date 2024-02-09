@@ -1,5 +1,5 @@
 import { RouterProvider } from "react-router-dom";
-import { router } from "../router/index.tsx";
+import { router } from "@router/index.tsx";
 
 const App = () => {
   return (
@@ -7,6 +7,6 @@ const App = () => {
       <RouterProvider router={router} />
     </>
   );
-}
+};
 
-export default App
+export default App;

@@ -1,7 +1,7 @@
+import { transactionTypes } from "@constants/index";
+import { type TransactionType } from "@money-tracker-types/index";
+import TransactionTypeRadio from "@pages/TransactionCreate/components/TransactionTypeRadio";
 import { useState } from "react";
-import { type TransactionType } from "../../types";
-import { transactionTypes } from "../../constants";
-import TransactionTypeRadio from "./components/TransactionTypeRadio";
 
 const TransactionNew = () => {
   const [transactionType, setTransactionType] =

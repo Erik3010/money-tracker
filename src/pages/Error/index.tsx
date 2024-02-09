@@ -1,4 +1,4 @@
-import Root from "../../layouts/Root";
+import Root from "@layouts/Root";
 
 const Error = () => {
   return (

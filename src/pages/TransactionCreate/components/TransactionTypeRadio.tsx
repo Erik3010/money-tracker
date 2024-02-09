@@ -2,8 +2,8 @@ import {
   ArrowDownCircleIcon,
   ArrowUpCircleIcon,
 } from "@heroicons/react/20/solid";
-import { cn } from "../../../utils";
-import { type TransactionType } from "../../../types";
+import { type TransactionType } from "@money-tracker-types/index";
+import { cn } from "@utils/index";
 
 interface TransactionTypeRadioProps {
   type: TransactionType;

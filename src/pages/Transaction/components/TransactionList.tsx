@@ -1,5 +1,5 @@
-import TransactionCard from "./TransactionCard";
 import { ChevronUpIcon } from "@heroicons/react/20/solid";
+import TransactionCard from "@pages/Transaction/components/TransactionCard";
 
 interface TransactionListProps {
   date?: string;

@@ -1,12 +1,12 @@
 import {
-  HomeIcon,
-  ChartPieIcon,
-  PlusCircleIcon,
   ArrowsRightLeftIcon,
+  ChartPieIcon,
+  HomeIcon,
+  PlusCircleIcon,
   UserCircleIcon,
 } from "@heroicons/react/20/solid";
 
-import NavItem from "./NavItem";
+import NavItem from "@components/Navbar/NavItem";
 
 const Navbar = () => {
   return (
