@@ -1,4 +1,4 @@
-import TransactionCard from "../../components/Transactions/TransactionCard";
+import TransactionCard from "./TransactionCard";
 import { ChevronUpIcon } from "@heroicons/react/20/solid";
 
 interface TransactionListProps {

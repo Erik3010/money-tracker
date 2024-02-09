@@ -2,8 +2,8 @@ import {
   ArrowDownCircleIcon,
   ArrowUpCircleIcon,
 } from "@heroicons/react/20/solid";
-import { cn } from "../../utils";
-import { type TransactionType } from "../../types";
+import { cn } from "../../../utils";
+import { type TransactionType } from "../../../types";
 
 interface TransactionTypeRadioProps {
   type: TransactionType;

@@ -2,9 +2,8 @@ import {
   ArrowDownCircleIcon,
   ArrowUpCircleIcon,
 } from "@heroicons/react/20/solid";
-import { type TransactionType } from "../../types";
-import { cn } from "../../utils";
-import { NavLink } from "react-router-dom";
+import { type TransactionType } from "../../../types";
+import { cn } from "../../../utils";
 
 interface TransactionCardProps {
   type: TransactionType;
@@ -28,17 +27,20 @@ const TransactionCard = ({ type }: TransactionCardProps) => {
             href="#"
             className="font-semibold text-sm text-gray-900 d-block hover:underline"
           >
-            Rp105.000
+            Freelance project
           </a>
-          <p className="text-xs text-gray-400">Freelance Project</p>
+          <p className="text-xs text-gray-400">16 Des 2023</p>
         </div>
       </div>
-      <NavLink
-        to="/transactions/123"
-        className="rounded-md bg-white px-2.5 py-1 text-xs font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+      <p
+        className={cn(
+          "font-semibold text-sm",
+          isIncome ? "text-green-600" : "text-red-600"
+        )}
       >
-        View
-      </NavLink>
+        <span className="text-[10px] text-gray-400 font-semibold">Rp</span>{" "}
+        105.000
+      </p>
     </article>
   );
 };

@@ -1,12 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 
 import Root from "../layouts/Root.tsx";
-import Error from "../pages/Error.tsx";
+import Error from "../pages/Error";
 
-import Home from "../pages/Home.tsx";
-import TransactionIndex from "../pages/Transactions/Index.tsx";
-import TransactionDetail from "../pages/Transactions/Detail.tsx";
-import TransactionNew from "../pages/Transactions/New.tsx";
+import Home from "../pages/Home";
+import TransactionIndex from "../pages/Transaction";
+import TransactionDetail from "../pages/TransactionDetail";
+import TransactionNew from "../pages/TransactionCreate";
 
 const routes = [
   {

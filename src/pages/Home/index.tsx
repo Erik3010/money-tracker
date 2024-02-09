@@ -1,5 +1,5 @@
-import TransactionCard from "../components/Home/TransactionCard";
-import BalanceCard from "../components/Home/BalanceCard";
+import TransactionCard from "./components/TransactionCard";
+import BalanceCard from "./components/BalanceCard";
 import { NavLink } from "react-router-dom";
 
 const Home = () => {

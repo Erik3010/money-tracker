@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { type TransactionType } from "../../types";
 import { transactionTypes } from "../../constants";
-import TransactionTypeRadio from "../../components/Transactions/TransactionTypeRadio";
+import TransactionTypeRadio from "./components/TransactionTypeRadio";
 
 const TransactionNew = () => {
   const [transactionType, setTransactionType] =

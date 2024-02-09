@@ -2,9 +2,9 @@ import {
   ArrowDownCircleIcon,
   ArrowUpCircleIcon,
 } from "@heroicons/react/20/solid";
-import { cn } from "../../utils";
+import { cn } from "../../../utils";
 
-import { type TransactionType } from "../../types";
+import { type TransactionType } from "../../../types";
 
 interface BalanceCardProps {
   label: string;

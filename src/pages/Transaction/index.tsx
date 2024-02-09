@@ -1,4 +1,4 @@
-import TransactionList from "../../components/Transactions/TransactionList";
+import TransactionList from "./components/TransactionList";
 
 const TransactionIndex = () => {
   return (
