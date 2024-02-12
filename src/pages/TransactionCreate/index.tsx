@@ -11,8 +11,8 @@ const TransactionNew = () => {
     setTransactionType(event.target.value as TransactionType);
 
   return (
-    <div>
-      <div className="mb-6 space-y-0.5">
+    <div className="space-y-6">
+      <div className="space-y-0.5">
         <h1 className="font-semibold text-xl text-gray-900">Add Transaction</h1>
         <p className="text-xs text-gray-400">
           Create your new transaction by filling these form.
@@ -26,13 +26,16 @@ const TransactionNew = () => {
           >
             Amount
           </label>
-          <input
-            type="text"
-            name="amount"
-            id="amount"
-            placeholder="Rp. 50.000"
-            className="block w-full rounded-md border-0 px-2.5 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
-          />
+          <div className="flex">
+            <span className="text-sm mr-2 text-gray-400 font-medium">Rp</span>
+            <input
+              type="text"
+              name="amount"
+              id="amount"
+              placeholder="50.000"
+              className="border-none text-3xl font-bold outline-none w-full"
+            />
+          </div>
         </div>
         <div className="space-y-2">
           <p className="text-sm text-gray-900 font-semibold">
@@ -48,6 +51,18 @@ const TransactionNew = () => {
               />
             ))}
           </div>
+        </div>
+        <div className="space-y-2">
+          <label
+            htmlFor="amount"
+            className="block text-sm font-medium leading-6 text-gray-900"
+          >
+            Notes
+          </label>
+          <textarea
+            className="block w-full rounded-md border-0 px-2.5 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6 resize-none"
+            placeholder="e.g Freelance Project"
+          ></textarea>
         </div>
       </div>
     </div>

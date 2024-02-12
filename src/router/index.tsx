@@ -25,10 +25,6 @@ const routes = [
             index: true,
             element: <TransactionIndex />,
           },
-          {
-            path: "new",
-            element: <TransactionNew />,
-          },
         ],
       },
     ],
@@ -38,6 +34,10 @@ const routes = [
     element: <Root showNavbar={false} />,
     errorElement: <Error />,
     children: [
+      {
+        path: "new",
+        element: <TransactionNew />,
+      },
       {
         path: ":transactionId",
         element: <TransactionDetail />,
