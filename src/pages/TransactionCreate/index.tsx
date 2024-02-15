@@ -1,14 +1,24 @@
+import DatePicker from "@components/Shared/Datepicker";
 import { transactionTypes } from "@constants/index";
 import { type TransactionType } from "@money-tracker-types/index";
 import TransactionTypeRadio from "@pages/TransactionCreate/components/TransactionTypeRadio";
 import { useState } from "react";
+import { CalendarIcon } from "@heroicons/react/20/solid";
+import { dateFormat } from "@utils/index";
 
 const TransactionNew = () => {
+  const [date, setDate] = useState<Date | undefined>(new Date());
+  const [isOpenDatePicker, setIsOpenDatePicker] = useState(false);
+
   const [transactionType, setTransactionType] =
     useState<TransactionType>("income");
 
   const handleOptionChange = (event: React.ChangeEvent<HTMLInputElement>) =>
     setTransactionType(event.target.value as TransactionType);
+
+  const toggleDatePicker = () => {
+    setIsOpenDatePicker((prev) => !prev);
+  };
 
   return (
     <div className="space-y-6">
@@ -50,6 +60,26 @@ const TransactionNew = () => {
                 handleOptionChange={handleOptionChange}
               />
             ))}
+          </div>
+        </div>
+        <div className="space-y-2">
+          <label
+            htmlFor="date"
+            className="block text-sm font-medium leading-6 text-gray-900"
+          >
+            Date
+          </label>
+          <div className="relative">
+            <button
+              className="flex items-center w-full rounded-md border-0 px-2.5 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-100 focus:outline-none sm:text-sm sm:leading-6"
+              onClick={toggleDatePicker}
+            >
+              <CalendarIcon className="h-5 w-5 mr-2" />
+              <span>{date ? dateFormat(date) : "Today"}</span>
+            </button>
+            {isOpenDatePicker && (
+              <DatePicker mode="single" selected={date} onSelect={setDate} />
+            )}
           </div>
         </div>
         <div className="space-y-2">
