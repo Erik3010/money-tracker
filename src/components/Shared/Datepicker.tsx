@@ -7,7 +7,7 @@ const DatePicker = (props: DatePickerProps) => {
   return (
     <DayPicker
       showOutsideDays
-      className="absolute top-100 left-0 bg-white p-3 shadow-sm border rounded-md mt-1"
+      className="fixed bg-white p-3 shadow-sm border rounded-md mt-1"
       classNames={{
         month: "space-y-3",
         caption: "relative flex h-9 justify-center items-center",

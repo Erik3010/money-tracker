@@ -11,6 +11,7 @@ export default defineConfig({
     alias: {
       "@components": resolve(root, "components"),
       "@constants": resolve(root, "constants"),
+      "@hooks": resolve(root, "hooks"),
       "@layouts": resolve(root, "layouts"),
       "@pages": resolve(root, "pages"),
       "@router": resolve(root, "router"),

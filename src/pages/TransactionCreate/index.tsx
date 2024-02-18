@@ -2,23 +2,39 @@ import DatePicker from "@components/Shared/Datepicker";
 import { transactionTypes } from "@constants/index";
 import { type TransactionType } from "@money-tracker-types/index";
 import TransactionTypeRadio from "@pages/TransactionCreate/components/TransactionTypeRadio";
-import { useState } from "react";
+import { useMemo, useRef, useState, ChangeEvent } from "react";
 import { CalendarIcon } from "@heroicons/react/20/solid";
-import { dateFormat } from "@utils/index";
+import { formatDate, diffInDays } from "@utils/index";
+import useOutsideClick from "@hooks/useOutsideClick";
+import AmountField, { AmountFieldValue } from "@components/Shared/AmountField";
 
 const TransactionNew = () => {
-  const [date, setDate] = useState<Date | undefined>(new Date());
-  const [isOpenDatePicker, setIsOpenDatePicker] = useState(false);
+  const today = useRef(new Date());
+  const datePickerRef = useRef<HTMLDivElement>(null);
 
+  const [date, setDate] = useState<Date>(today.current);
+  const [amount, setAmount] = useState<number | undefined>();
+  const [isOpenDatePicker, setIsOpenDatePicker] = useState(false);
   const [transactionType, setTransactionType] =
     useState<TransactionType>("income");
 
-  const handleOptionChange = (event: React.ChangeEvent<HTMLInputElement>) =>
-    setTransactionType(event.target.value as TransactionType);
+  useOutsideClick(datePickerRef, () => setIsOpenDatePicker(false));
 
-  const toggleDatePicker = () => {
-    setIsOpenDatePicker((prev) => !prev);
-  };
+  const handleTransactionType = ({ target }: ChangeEvent<HTMLInputElement>) =>
+    setTransactionType(target.value as TransactionType);
+  const handleAmountChange = ({ value }: AmountFieldValue) => setAmount(value);
+  const handleChangeDate = (date: Date | undefined) => date && setDate(date);
+  const toggleDatePicker = () => setIsOpenDatePicker((prev) => !prev);
+
+  const showDate = useMemo(() => {
+    const dayTerms = ["Yesterday", "Today", "Tomorrow"];
+    const differenceInDays = diffInDays(today.current, date);
+    if (differenceInDays >= -1 && differenceInDays <= 1) {
+      return dayTerms[differenceInDays + 1];
+    }
+
+    return formatDate(date);
+  }, [today, date]);
 
   return (
     <div className="space-y-6">
@@ -36,16 +52,7 @@ const TransactionNew = () => {
           >
             Amount
           </label>
-          <div className="flex">
-            <span className="text-sm mr-2 text-gray-400 font-medium">Rp</span>
-            <input
-              type="text"
-              name="amount"
-              id="amount"
-              placeholder="50.000"
-              className="border-none text-3xl font-bold outline-none w-full"
-            />
-          </div>
+          <AmountField value={amount} onChange={handleAmountChange} />
         </div>
         <div className="space-y-2">
           <p className="text-sm text-gray-900 font-semibold">
@@ -57,7 +64,7 @@ const TransactionNew = () => {
                 key={type}
                 type={type}
                 value={transactionType}
-                handleOptionChange={handleOptionChange}
+                handleOptionChange={handleTransactionType}
               />
             ))}
           </div>
@@ -69,16 +76,20 @@ const TransactionNew = () => {
           >
             Date
           </label>
-          <div className="relative">
+          <div className="relative" ref={datePickerRef}>
             <button
               className="flex items-center w-full rounded-md border-0 px-2.5 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-100 focus:outline-none sm:text-sm sm:leading-6"
               onClick={toggleDatePicker}
             >
               <CalendarIcon className="h-5 w-5 mr-2" />
-              <span>{date ? dateFormat(date) : "Today"}</span>
+              <span>{showDate}</span>
             </button>
             {isOpenDatePicker && (
-              <DatePicker mode="single" selected={date} onSelect={setDate} />
+              <DatePicker
+                mode="single"
+                selected={date}
+                onSelect={handleChangeDate}
+              />
             )}
           </div>
         </div>
