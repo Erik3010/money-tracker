@@ -1,40 +1,21 @@
+import AmountField, { AmountFieldValue } from "@components/Shared/AmountField";
 import DatePicker from "@components/Shared/Datepicker";
 import { transactionTypes } from "@constants/index";
 import { type TransactionType } from "@money-tracker-types/index";
 import TransactionTypeRadio from "@pages/TransactionCreate/components/TransactionTypeRadio";
-import { useMemo, useRef, useState, ChangeEvent } from "react";
-import { CalendarIcon } from "@heroicons/react/20/solid";
-import { formatDate, diffInDays } from "@utils/index";
-import useOutsideClick from "@hooks/useOutsideClick";
-import AmountField, { AmountFieldValue } from "@components/Shared/AmountField";
+import { ChangeEvent, useRef, useState } from "react";
 
 const TransactionNew = () => {
   const today = useRef(new Date());
-  const datePickerRef = useRef<HTMLDivElement>(null);
 
   const [date, setDate] = useState<Date>(today.current);
   const [amount, setAmount] = useState<number | undefined>();
-  const [isOpenDatePicker, setIsOpenDatePicker] = useState(false);
   const [transactionType, setTransactionType] =
     useState<TransactionType>("income");
-
-  useOutsideClick(datePickerRef, () => setIsOpenDatePicker(false));
 
   const handleTransactionType = ({ target }: ChangeEvent<HTMLInputElement>) =>
     setTransactionType(target.value as TransactionType);
   const handleAmountChange = ({ value }: AmountFieldValue) => setAmount(value);
-  const handleChangeDate = (date: Date | undefined) => date && setDate(date);
-  const toggleDatePicker = () => setIsOpenDatePicker((prev) => !prev);
-
-  const showDate = useMemo(() => {
-    const dayTerms = ["Yesterday", "Today", "Tomorrow"];
-    const differenceInDays = diffInDays(today.current, date);
-    if (differenceInDays >= -1 && differenceInDays <= 1) {
-      return dayTerms[differenceInDays + 1];
-    }
-
-    return formatDate(date);
-  }, [today, date]);
 
   return (
     <div className="space-y-6">
@@ -76,22 +57,7 @@ const TransactionNew = () => {
           >
             Date
           </label>
-          <div className="relative" ref={datePickerRef}>
-            <button
-              className="flex items-center w-full rounded-md border-0 px-2.5 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-100 focus:outline-none sm:text-sm sm:leading-6"
-              onClick={toggleDatePicker}
-            >
-              <CalendarIcon className="h-5 w-5 mr-2" />
-              <span>{showDate}</span>
-            </button>
-            {isOpenDatePicker && (
-              <DatePicker
-                mode="single"
-                selected={date}
-                onSelect={handleChangeDate}
-              />
-            )}
-          </div>
+          <DatePicker onChange={setDate} />
         </div>
         <div className="space-y-2">
           <label
