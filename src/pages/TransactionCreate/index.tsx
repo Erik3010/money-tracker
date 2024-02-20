@@ -1,13 +1,17 @@
 import AmountField, { AmountFieldValue } from "@components/Shared/AmountField";
 import DatePicker from "@components/Shared/Datepicker";
-import { transactionTypes } from "@constants/index";
+import { TRANSACTION_CATEGORY, transactionTypes } from "@constants/index";
 import { type TransactionType } from "@money-tracker-types/index";
 import TransactionTypeRadio from "@pages/TransactionCreate/components/TransactionTypeRadio";
 import { ChangeEvent, useRef, useState } from "react";
+import SelectField from "@components/Shared/SelectField";
 
 const TransactionNew = () => {
   const today = useRef(new Date());
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [category, setCategory] = useState<string | null>(null);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [date, setDate] = useState<Date>(today.current);
   const [amount, setAmount] = useState<number | undefined>();
   const [transactionType, setTransactionType] =
@@ -58,6 +62,19 @@ const TransactionNew = () => {
             Date
           </label>
           <DatePicker onChange={setDate} />
+        </div>
+        <div className="space-y-2">
+          <label
+            htmlFor="category"
+            className="block text-sm font-medium leading-6 text-gray-900"
+          >
+            Category
+          </label>
+          <SelectField
+            placeholder="Choose category..."
+            items={[...TRANSACTION_CATEGORY]}
+            onChange={setCategory}
+          />
         </div>
         <div className="space-y-2">
           <label

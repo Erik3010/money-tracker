@@ -37,7 +37,7 @@ const DatePicker = ({ onChange }: DatePickerProps) => {
         </button>
       </Popover.Trigger>
       <Popover.Portal>
-        <Popover.Content align="start" className="popover-content">
+        <Popover.Content align="start" className="scale-in">
           <DayPicker
             showOutsideDays
             mode="single"
