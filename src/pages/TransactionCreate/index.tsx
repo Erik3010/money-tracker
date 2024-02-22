@@ -5,8 +5,12 @@ import { type TransactionType } from "@money-tracker-types/index";
 import TransactionTypeRadio from "@pages/TransactionCreate/components/TransactionTypeRadio";
 import { ChangeEvent, useRef, useState } from "react";
 import SelectField from "@components/Shared/SelectField";
+import { ChevronLeftIcon } from "@heroicons/react/20/solid";
+import { useNavigate } from "react-router-dom";
 
 const TransactionNew = () => {
+  const navigate = useNavigate();
+
   const today = useRef(new Date());
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -23,11 +27,21 @@ const TransactionNew = () => {
 
   return (
     <div className="space-y-6">
-      <div className="space-y-0.5">
-        <h1 className="font-semibold text-xl text-gray-900">Add Transaction</h1>
-        <p className="text-xs text-gray-400">
-          Create your new transaction by filling these form.
-        </p>
+      <div className="flex items-center gap-x-3">
+        <button
+          className="rounded-full hover:bg-gray-100 p-1 transition"
+          onClick={() => navigate(-1)}
+        >
+          <ChevronLeftIcon className="h-7 w-h-7 text-gray-500" />
+        </button>
+        <div className="flex flex-col space-y-0.5">
+          <h1 className="font-semibold text-xl text-gray-900">
+            Add Transaction
+          </h1>
+          <p className="text-xs text-gray-400">
+            Create your new transaction by filling these form.
+          </p>
+        </div>
       </div>
       <div className="space-y-5">
         <div className="space-y-2">
@@ -89,6 +103,9 @@ const TransactionNew = () => {
           ></textarea>
         </div>
       </div>
+      <button className="w-full rounded-md bg-blue-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-600">
+        Add Transaction
+      </button>
     </div>
   );
 };
