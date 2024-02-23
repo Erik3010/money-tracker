@@ -85,6 +85,7 @@ const TransactionNew = () => {
             Category
           </label>
           <SelectField
+            expand
             placeholder="Choose category..."
             items={[...TRANSACTION_CATEGORY]}
             onChange={setCategory}

@@ -32,78 +32,82 @@
     font-weight: 800;
     src: url("../assets/fonts/Inter-ExtraBold.ttf");
   }
+}
 
-  input[type="number"]::-webkit-inner-spin-button,
-  input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-
-  .accordion-chevron {
-    transition: transform 0.3s cubic-bezier(0.87, 0, 0.13, 1);
-  }
-
-  .accordion-trigger[data-state="open"] > .accordion-chevron {
-    transform: rotate(180deg);
-  }
-
-  .accordion-content[data-state="open"] {
-    animation: slideDown 0.3s cubic-bezier(0.87, 0, 0.13, 1);
-  }
-
-  .accordion-content[data-state="closed"] {
-    animation: slideUp 0.3s cubic-bezier(0.87, 0, 0.13, 1);
-  }
-
-  .slide-in {
-    animation: slideIn 0.15s ease-out;
-  }
-
-  .scale-in {
-    animation: scaleIn 0.15s ease-out;
-  }
-
-  @keyframes scaleIn {
-    from {
-      opacity: 0;
-      scale: 0.95;
-    }
-    to {
-      opacity: 1;
-      scale: 1;
-    }
-  }
-
-  @keyframes slideIn {
-    from {
-      opacity: 0;
-      transform: translateY(-0.75rem);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes slideDown {
-    from {
-      height: 0;
-    }
-    to {
-      height: var(--radix-accordion-content-height);
-    }
-  }
-
-  @keyframes slideUp {
-    from {
-      height: var(--radix-accordion-content-height);
-    }
-    to {
-      height: 0;
-    }
-  }
+html {
+  scrollbar-gutter: stable;
 }
 
 .nav-link.active {
   @apply text-blue-700;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.accordion-chevron {
+  transition: transform 0.3s cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+.accordion-trigger[data-state="open"] .accordion-chevron {
+  transform: rotate(180deg);
+}
+
+.accordion-content[data-state="open"] {
+  animation: slideDown 0.3s cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+.accordion-content[data-state="closed"] {
+  animation: slideUp 0.3s cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+.slide-in {
+  animation: slideIn 0.15s ease-out;
+}
+
+.scale-in {
+  animation: scaleIn 0.15s ease-out;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    scale: 0.95;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-0.75rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
 }

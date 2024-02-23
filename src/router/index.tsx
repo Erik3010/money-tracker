@@ -6,7 +6,7 @@ import Error from "@pages/Error";
 import Home from "@pages/Home";
 import TransactionIndex from "@pages/Transaction";
 import TransactionNew from "@pages/TransactionCreate";
-import TransactionDetail from "@pages/TransactionDetail";
+import Report from "@pages/Report";
 
 const routes = [
   {
@@ -17,6 +17,10 @@ const routes = [
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "report",
+        element: <Report />,
       },
       {
         path: "transactions",
@@ -37,10 +41,6 @@ const routes = [
       {
         path: "new",
         element: <TransactionNew />,
-      },
-      {
-        path: ":transactionId",
-        element: <TransactionDetail />,
       },
     ],
   },

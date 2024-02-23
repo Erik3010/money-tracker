@@ -1,4 +1,3 @@
-import { ChevronUpIcon } from "@heroicons/react/20/solid";
 import TransactionCard from "@pages/Transaction/components/TransactionCard";
 import * as Accordion from "@radix-ui/react-accordion";
 
@@ -19,7 +18,13 @@ const TransactionList = ({ date = "Today" }: TransactionListProps) => {
           </h2>
           <p className="text-xs text-gray-400">5 transaction(s) was made</p>
         </div>
-        <ChevronUpIcon className="accordion-chevron h-4 w-4 text-gray-500" />
+        <div className="flex flex-col items-end gap-x-3">
+          <h2 className="text-sm font-semibold text-gray-700">
+            <span className="text-xs text-gray-400 font-semibold">Rp</span>{" "}
+            250.000
+          </h2>
+          {/* <ChevronUpIcon className="accordion-chevron h-4 w-4 text-gray-500" /> */}
+        </div>
       </Accordion.Trigger>
       <Accordion.Content className="accordion-content divide-y divide-gray-100 px-4">
         {Array(5)
