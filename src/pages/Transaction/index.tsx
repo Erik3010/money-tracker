@@ -1,4 +1,5 @@
 import TransactionList from "@pages/Transaction/components/TransactionList";
+import * as Accordion from "@radix-ui/react-accordion";
 
 const TransactionIndex = () => {
   return (
@@ -9,16 +10,20 @@ const TransactionIndex = () => {
           All transactions are listed here
         </p>
       </div>
-      <div className="space-y-3.5">
+      <Accordion.Root
+        className="space-y-3.5"
+        type="multiple"
+        defaultValue={["Today", "1 Feb 2023", "2 Feb 2023"]}
+      >
         {Array(3)
           .fill(null)
           .map((_, index) => (
             <TransactionList
               key={index}
-              date={index !== 0 ? "09 Feb 2023" : "Today"}
+              date={index !== 0 ? `${index} Feb 2023` : "Today"}
             />
           ))}
-      </div>
+      </Accordion.Root>
     </div>
   );
 };
