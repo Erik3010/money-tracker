@@ -1,6 +1,6 @@
 import SelectField from "@components/Shared/SelectField";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
-import BalanceCard from "@pages/Home/components/BalanceCard";
+import BalanceCard from "@components/Shared/BalanceCard";
 import { noop } from "@utils/index";
 
 const Report = () => {
@@ -24,11 +24,11 @@ const Report = () => {
             <button className="p-0.5 rounded-full border text-gray-400 hover:bg-gray-100 flex items-center justify-center">
               <ChevronLeftIcon className="w-5 h-5" />
             </button>
-            <div className="space-y-1">
+            <div className="space-y-0.5">
               <p className="text-xs uppercase font-semibold text-gray-400">
                 March
               </p>
-              <h1 className="font-semibold text-xl text-gray-900 space-x-1">
+              <h1 className="font-semibold text-base text-gray-900 space-x-1">
                 <span className="text-sm text-gray-400 font-semibold">Rp</span>
                 <span>250.000</span>
               </h1>
@@ -37,11 +37,11 @@ const Report = () => {
               <ChevronRightIcon className="w-5 h-5" />
             </button>
           </div>
-          <div className="flex flex-col items-end space-y-1">
+          <div className="flex flex-col items-end space-y-0.5">
             <p className="text-xs uppercase font-semibold text-gray-400">
               Spend per day
             </p>
-            <h1 className="font-semibold text-xl text-gray-900 space-x-1">
+            <h1 className="font-semibold text-base text-gray-900 space-x-1">
               <span className="text-sm text-gray-400 font-semibold">Rp</span>
               <span>250.000</span>
             </h1>
@@ -51,6 +51,7 @@ const Report = () => {
           <BalanceCard dense type="income" label="Income" balance="10.000" />
           <BalanceCard dense type="outcome" label="Outcome" balance="10.000" />
         </section>
+        <section>Hello world</section>
       </div>
     </div>
   );

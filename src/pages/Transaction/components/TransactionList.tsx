@@ -1,4 +1,4 @@
-import TransactionCard from "@pages/Transaction/components/TransactionCard";
+import TransactionCard from "@components/Shared/TransactionCard";
 import * as Accordion from "@radix-ui/react-accordion";
 
 interface TransactionListProps {

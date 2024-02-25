@@ -68,28 +68,30 @@ const TransactionNew = () => {
             ))}
           </div>
         </div>
-        <div className="space-y-2">
-          <label
-            htmlFor="date"
-            className="block text-sm font-medium leading-6 text-gray-900"
-          >
-            Date
-          </label>
-          <DatePicker onChange={setDate} />
-        </div>
-        <div className="space-y-2">
-          <label
-            htmlFor="category"
-            className="block text-sm font-medium leading-6 text-gray-900"
-          >
-            Category
-          </label>
-          <SelectField
-            expand
-            placeholder="Choose category..."
-            items={[...TRANSACTION_CATEGORY]}
-            onChange={setCategory}
-          />
+        <div className="grid grid-cols-1 xs:grid-cols-2 gap-4">
+          <div className="space-y-2">
+            <label
+              htmlFor="date"
+              className="block text-sm font-medium leading-6 text-gray-900"
+            >
+              Date
+            </label>
+            <DatePicker onChange={setDate} />
+          </div>
+          <div className="space-y-2">
+            <label
+              htmlFor="category"
+              className="block text-sm font-medium leading-6 text-gray-900"
+            >
+              Category
+            </label>
+            <SelectField
+              expand
+              placeholder="Choose category..."
+              items={[...TRANSACTION_CATEGORY]}
+              onChange={setCategory}
+            />
+          </div>
         </div>
         <div className="space-y-2">
           <label
@@ -105,7 +107,7 @@ const TransactionNew = () => {
         </div>
       </div>
       <button className="w-full rounded-md bg-blue-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-600">
-        Add Transaction
+        Add your <span className="capitalize">{transactionType}</span>
       </button>
     </div>
   );
