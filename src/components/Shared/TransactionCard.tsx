@@ -27,9 +27,9 @@ const TransactionCard = ({ type }: TransactionCardProps) => {
             href="#"
             className="font-semibold text-sm text-gray-900 d-block hover:underline"
           >
-            Makanan
+            Subway Sandwich
           </a>
-          <p className="text-xs text-gray-400">Freelance Project</p>
+          <p className="text-xs text-gray-400">Food</p>
         </div>
       </div>
       <div className="text-sm font-semibold text-gray-900">

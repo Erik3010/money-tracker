@@ -8,7 +8,7 @@ interface TransactionListProps {
 const TransactionList = ({ date = "Today" }: TransactionListProps) => {
   return (
     <Accordion.Item
-      className="bg-white border shadow-sm rounded-xl overflow-hidden"
+      className="bg-white border shadow-sm rounded-lg overflow-hidden"
       value={date}
     >
       <Accordion.Trigger className="accordion-trigger data-[state=open]:border-b data-[state=closed]:border-b-1 transition-[border-width] delay-100 w-full flex justify-between items-center py-3.5 hover:bg-gray-50 cursor-pointer px-4">

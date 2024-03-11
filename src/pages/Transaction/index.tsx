@@ -11,7 +11,7 @@ const TransactionIndex = () => {
         </p>
       </div>
       <Accordion.Root
-        className="space-y-3.5"
+        className="space-y-2.5"
         type="multiple"
         defaultValue={["Today", "1 Feb 2023", "2 Feb 2023"]}
       >
