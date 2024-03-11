@@ -3,6 +3,11 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
 import BalanceCard from "@components/Shared/BalanceCard";
 import { noop } from "@utils/index";
 
+import TransactionList from "@pages/Transaction/components/TransactionList";
+import CategoryCard from "./components/CategoryCard";
+import * as Accordion from "@radix-ui/react-accordion";
+import * as Tabs from "@radix-ui/react-tabs";
+
 const Report = () => {
   return (
     <div className="space-y-6">
@@ -51,7 +56,45 @@ const Report = () => {
           <BalanceCard dense type="income" label="Income" balance="10.000" />
           <BalanceCard dense type="outcome" label="Outcome" balance="10.000" />
         </section>
-        <section>Hello world</section>
+        <Tabs.Root defaultValue="transaction">
+          <Tabs.List className="grid grid-cols-2 bg-gray-200 rounded-lg p-1">
+            <Tabs.Trigger
+              className="tabs-trigger leading-relaxed rounded-md transition flex items-center justify-center text-center font-semibold text-sm py-1 text-gray-500 hover:text-gray-900"
+              value="transaction"
+            >
+              Transaction
+            </Tabs.Trigger>
+            <Tabs.Trigger
+              className="tabs-trigger leading-relaxed rounded-md transition flex items-center justify-center text-center font-semibold text-sm py-1 text-gray-500 hover:text-gray-900"
+              value="category"
+            >
+              Category
+            </Tabs.Trigger>
+          </Tabs.List>
+          <div className="mt-3">
+            <Tabs.Content value="transaction">
+              <Accordion.Root className="space-y-2.5" type="multiple">
+                {Array(3)
+                  .fill(null)
+                  .map((_, index) => (
+                    <TransactionList
+                      key={index}
+                      date={index !== 0 ? `${index} Feb 2023` : "Today"}
+                    />
+                  ))}
+              </Accordion.Root>
+            </Tabs.Content>
+            <Tabs.Content value="category">
+              <div className="grid grid-cols-2 gap-3.5">
+                {Array(5)
+                  .fill(null)
+                  .map((_, index) => (
+                    <CategoryCard key={index} />
+                  ))}
+              </div>
+            </Tabs.Content>
+          </div>
+        </Tabs.Root>
       </div>
     </div>
   );

@@ -68,6 +68,10 @@ input[type="number"]::-webkit-outer-spin-button {
   animation: slideUp 0.3s cubic-bezier(0.87, 0, 0.13, 1);
 }
 
+.tabs-trigger[data-state="active"] {
+  @apply bg-white text-gray-900 shadow-sm;
+}
+
 .slide-in {
   animation: slideIn 0.15s ease-out;
 }
