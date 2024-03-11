@@ -38,6 +38,10 @@ html {
   scrollbar-gutter: stable;
 }
 
+body[style] {
+  margin-right: 0 !important;
+}
+
 .nav-link.active {
   @apply text-blue-700;
 }
