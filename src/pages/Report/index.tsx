@@ -7,6 +7,7 @@ import TransactionList from "@pages/Transaction/components/TransactionList";
 import CategoryCard from "./components/CategoryCard";
 import * as Accordion from "@radix-ui/react-accordion";
 import * as Tabs from "@radix-ui/react-tabs";
+import Chart from "./components/Chart";
 
 const Report = () => {
   return (
@@ -51,6 +52,9 @@ const Report = () => {
               <span>250.000</span>
             </h1>
           </div>
+        </section>
+        <section className="h-52">
+          <Chart />
         </section>
         <section className="grid grid-cols-1 xs:grid-cols-2 gap-4">
           <BalanceCard dense type="income" label="Income" balance="10.000" />

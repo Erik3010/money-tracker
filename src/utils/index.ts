@@ -6,8 +6,10 @@ export const cn = (...classNames: ClassValue[]) => twMerge(clsx(classNames));
 export const formatDate = (date: Date) =>
   new Intl.DateTimeFormat("en-US", { dateStyle: "long" }).format(date);
 
-export const formatCurrency = (amount: number) =>
-  new Intl.NumberFormat("id-ID").format(amount);
+export const formatCurrency = (
+  amount: number,
+  options: Intl.NumberFormatOptions = {}
+) => new Intl.NumberFormat("id-ID", options).format(amount);
 
 export const toCurrency = (value: string) =>
   Number(value.replace(/(-(?!\d))|[^0-9|-]/g, "") || "");
