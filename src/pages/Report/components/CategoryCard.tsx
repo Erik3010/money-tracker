@@ -1,7 +1,7 @@
 const CategoryCard = () => {
   return (
     <div className="rounded-lg border flex flex-col p-4 cursor-pointer hover:bg-gray-50">
-      <div className="text-3xl w-16 h-16 flex items-center justify-center rounded-lg bg-gray-100 border self-start">
+      <div className="text-2xl w-12 h-12 flex items-center justify-center rounded-lg bg-slate-100 border self-start">
         🍔
       </div>
       <div className="mt-2.5 mb-3 space-y-0.5">
