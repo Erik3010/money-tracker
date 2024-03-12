@@ -1,9 +1,9 @@
 import {
   ArrowsRightLeftIcon,
   ChartPieIcon,
+  Cog6ToothIcon,
   HomeIcon,
   PlusCircleIcon,
-  UserCircleIcon,
 } from "@heroicons/react/20/solid";
 
 import NavItem from "@components/Navbar/NavItem";
@@ -19,7 +19,7 @@ const Navbar = () => {
         to="/transactions"
         Icon={ArrowsRightLeftIcon}
       />
-      <NavItem label="Profile" to="/profile" Icon={UserCircleIcon} />
+      <NavItem label="Settings" to="/settings" Icon={Cog6ToothIcon} />
     </div>
   );
 };

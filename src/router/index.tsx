@@ -7,6 +7,7 @@ import Home from "@pages/Home";
 import TransactionIndex from "@pages/Transaction";
 import TransactionNew from "@pages/TransactionCreate";
 import Report from "@pages/Report";
+import Setting from "@pages/Settings";
 
 const routes = [
   {
@@ -21,6 +22,10 @@ const routes = [
       {
         path: "report",
         element: <Report />,
+      },
+      {
+        path: "settings",
+        element: <Setting />,
       },
       {
         path: "transactions",
