@@ -36,7 +36,7 @@ const Home = () => {
               See all transaction
             </NavLink>
           </div>
-          <div className="divide-y divide-gray-100 bg-white border shadow-sm rounded-xl px-4">
+          <div className="divide-y divide-gray-100 bg-white border shadow-sm rounded-lg px-4">
             {Array(5)
               .fill(null)
               .map((_, index) => (
