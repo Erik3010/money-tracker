@@ -21,7 +21,7 @@ const Setting = () => {
                     <div className="rounded-lg p-2 bg-blue-500">
                       <Squares2X2Icon className="w-4 h-4 text-white" />
                     </div>
-                    <div>
+                    <div className="space-y-0.5">
                       <h3 className="font-semibold">Category</h3>
                       <p className="text-xs text-gray-400">
                         Manage your category
