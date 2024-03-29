@@ -5,8 +5,8 @@ const CategoryCard = () => {
         🍔
       </div>
       <div className="mt-2.5 mb-3 space-y-0.5">
-        <h2 className="text-base font-semibold">Food & Beverage</h2>
-        <h2 className="text-sm font-medium text-gray-500">
+        <h2 className="text-xs font-medium text-gray-500">Food & Beverage</h2>
+        <h2 className="text-base font-semibold">
           <span className="text-xs text-gray-400 font-semibold">Rp</span>{" "}
           250.000
         </h2>
