@@ -7,6 +7,7 @@ import { ChangeEvent, useRef, useState } from "react";
 import SelectField from "@components/Shared/SelectField";
 import { ChevronLeftIcon } from "@heroicons/react/20/solid";
 import { useNavigate } from "react-router-dom";
+import Button from "@components/Shared/Button";
 
 const TransactionNew = () => {
   const navigate = useNavigate();
@@ -106,9 +107,9 @@ const TransactionNew = () => {
           ></textarea>
         </div>
       </div>
-      <button className="w-full rounded-md bg-blue-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-600">
+      <Button>
         Add your <span className="capitalize">{transactionType}</span>
-      </button>
+      </Button>
     </div>
   );
 };

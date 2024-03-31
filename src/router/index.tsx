@@ -8,12 +8,16 @@ import TransactionIndex from "@pages/Transaction";
 import TransactionNew from "@pages/TransactionCreate";
 import Report from "@pages/Report";
 import Setting from "@pages/Settings";
+import Login from "@pages/Auth/Login";
+import Register from "@pages/Auth/Register";
+
+const routeItemProps = { errorElement: <Error /> };
 
 const routes = [
   {
+    ...routeItemProps,
     path: "/",
     element: <Root />,
-    errorElement: <Error />,
     children: [
       {
         index: true,
@@ -39,9 +43,24 @@ const routes = [
     ],
   },
   {
+    ...routeItemProps,
+    path: "/",
+    element: <Root showNavbar={false} />,
+    children: [
+      {
+        path: "login",
+        element: <Login />,
+      },
+      {
+        path: "register",
+        element: <Register />,
+      },
+    ],
+  },
+  {
+    ...routeItemProps,
     path: "transactions",
     element: <Root showNavbar={false} />,
-    errorElement: <Error />,
     children: [
       {
         path: "new",
