@@ -16,6 +16,7 @@ export default defineConfig({
       "@pages": resolve(root, "pages"),
       "@router": resolve(root, "router"),
       "@utils": resolve(root, "utils"),
+      "@lib": resolve(root, "lib"),
       "@money-tracker-types": resolve(root, "types"),
     },
   },
