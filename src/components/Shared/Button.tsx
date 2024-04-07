@@ -7,7 +7,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const buttonClass =
-  "w-full rounded-md bg-blue-500 px-3.5 py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-600 leading-none flex justify-center items-center space-x-2.5";
+  "w-full rounded-md bg-blue-500 px-3.5 py-3.5 text-sm font-semibold text-white shadow-sm enabled:hover:bg-blue-600 leading-none flex justify-center items-center space-x-2.5 disabled:opacity-75 disabled:cursor-not-allowed";
 
 const Button = ({
   className,
