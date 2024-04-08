@@ -1,9 +1,9 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "@components/Shared/Button";
 import Input from "@components/Shared/Input";
 
 import supabase from "@lib/supabaseClient";
+import useForm from "@hooks/useForm";
 
 interface AuthForm {
   email: string;
@@ -11,32 +11,22 @@ interface AuthForm {
 }
 
 const Register = () => {
-  // const [form, setForm] = useState<AuthForm>({ email: "", password: "" });
-  const [form, setForm] = useState<AuthForm>({
-    email: "superadmin@gmail.com",
-    password: "superadmin",
-  });
-  const [isLoading, setIsLoading] = useState(false);
-
-  const handleFormChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target;
-    setForm({ ...form, [name]: value });
-  };
-
-  const handleSignUp = async (event: React.FormEvent) => {
-    event.preventDefault();
-
-    const { email, password } = form;
+  const handleSubmit = async ({ email, password }: AuthForm) => {
     if (!email || !password) return;
 
-    try {
-      setIsLoading(true);
-      const response = await supabase.auth.signUp({ email, password });
-      console.log(response);
-    } finally {
-      setIsLoading(false);
-    }
+    const response = await supabase.auth.signUp({ email, password });
+    console.log(response);
   };
+
+  const {
+    formData: form,
+    isLoading,
+    handleFormChange,
+    handleSubmit: handleSignUp,
+  } = useForm(
+    { email: "superadmin@gmail.com", password: "superadmin" },
+    handleSubmit
+  );
 
   return (
     <div className="w-full h-screen -my-6 flex items-center">
