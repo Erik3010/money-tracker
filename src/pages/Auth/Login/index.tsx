@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Login = () => {
   return (
     <div className="w-full h-screen -my-6 flex items-center">
-      <div className="w-full space-y-6">
+      <form className="w-full space-y-6">
         <div className="space-y-1.5">
           <h1 className="text-2xl font-semibold text-gray-700">Login</h1>
           <p className="text-sm text-gray-500">
@@ -17,7 +17,7 @@ const Login = () => {
             <label className="text-sm font-medium" htmlFor="email">
               Email
             </label>
-            <Input type="text" id="email" placeholder="example@gmail.com" />
+            <Input type="email" id="email" placeholder="example@gmail.com" />
           </div>
           <div className="grid gap-2">
             <label className="text-sm font-medium" htmlFor="password">
@@ -34,7 +34,7 @@ const Login = () => {
           </Link>{" "}
           here.
         </div>
-      </div>
+      </form>
     </div>
   );
 };
