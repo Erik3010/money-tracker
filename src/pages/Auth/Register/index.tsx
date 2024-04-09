@@ -4,11 +4,7 @@ import Input from "@components/Shared/Input";
 
 import supabase from "@lib/supabaseClient";
 import useForm from "@hooks/useForm";
-
-interface AuthForm {
-  email: string;
-  password: string;
-}
+import { AuthForm } from "@money-tracker-types/index";
 
 const Register = () => {
   const handleSubmit = async ({ email, password }: AuthForm) => {
@@ -19,7 +15,7 @@ const Register = () => {
   };
 
   const {
-    formData: form,
+    formData,
     isLoading,
     handleFormChange,
     handleSubmit: handleSignUp,
@@ -47,7 +43,7 @@ const Register = () => {
               name="email"
               id="email"
               onChange={handleFormChange}
-              value={form.email}
+              value={formData.email}
               placeholder="example@gmail.com"
             />
           </div>
@@ -60,7 +56,7 @@ const Register = () => {
               name="password"
               id="password"
               onChange={handleFormChange}
-              value={form.password}
+              value={formData.password}
             />
           </div>
         </div>
