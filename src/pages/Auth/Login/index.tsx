@@ -1,9 +1,9 @@
+import { Link } from "react-router-dom";
 import Button from "@components/Shared/Button";
 import Input from "@components/Shared/Input";
 import useForm from "@hooks/useForm";
 import supabase from "@lib/supabaseClient";
 import { AuthForm } from "@money-tracker-types/index";
-import { Link } from "react-router-dom";
 
 const Login = () => {
   const handleSubmit = async ({ email, password }: AuthForm) => {
