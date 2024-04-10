@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Button from "@components/Shared/Button";
 import Input from "@components/Shared/Input";
 
-import supabase from "@lib/supabaseClient";
+import supabase from "../../../libs/supabaseClient";
 import useForm from "@hooks/useForm";
 import { AuthForm } from "@money-tracker-types/index";
 
