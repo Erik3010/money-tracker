@@ -1,4 +1,9 @@
-import { ChevronRightIcon, Squares2X2Icon } from "@heroicons/react/20/solid";
+import {
+  Squares2X2Icon,
+  ArrowRightOnRectangleIcon,
+} from "@heroicons/react/20/solid";
+import SettingGroup from "./components/SettingGroup";
+import SettingItem from "./components/SettingItem";
 
 const Setting = () => {
   return (
@@ -8,56 +13,24 @@ const Setting = () => {
         <p className="text-xs text-gray-400">Manage your settings here</p>
       </div>
       <section className="space-y-5">
-        <div className="space-y-2">
-          <h2 className="uppercase text-xs font-semibold text-gray-400">
-            Transaction
-          </h2>
-          <div className="divide-y divide-gray-100 bg-white border shadow-sm rounded-lg overflow-hidden">
-            {Array(3)
-              .fill(null)
-              .map(() => (
-                <article className="flex justify-between items-center px-4 py-3.5 hover:bg-gray-50 cursor-pointer">
-                  <div className="flex items-center gap-x-4 text-sm">
-                    <div className="rounded-lg p-2 bg-blue-500">
-                      <Squares2X2Icon className="w-4 h-4 text-white" />
-                    </div>
-                    <div className="space-y-0.5">
-                      <h3 className="font-semibold">Category</h3>
-                      <p className="text-xs text-gray-400">
-                        Manage your category
-                      </p>
-                    </div>
-                  </div>
-                  <ChevronRightIcon className="w-5 h-5 text-gray-400" />
-                </article>
-              ))}
-          </div>
-        </div>
-        <div className="space-y-2">
-          <h2 className="uppercase text-xs font-semibold text-gray-400">
-            Transaction
-          </h2>
-          <div className="divide-y divide-gray-100 bg-white border shadow-sm rounded-lg overflow-hidden">
-            {Array(3)
-              .fill(null)
-              .map(() => (
-                <article className="flex justify-between items-center px-4 py-3.5 hover:bg-gray-50 cursor-pointer">
-                  <div className="flex items-center gap-x-4 text-sm">
-                    <div className="rounded-lg p-2 bg-blue-500">
-                      <Squares2X2Icon className="w-4 h-4 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold">Category</h3>
-                      <p className="text-xs text-gray-400">
-                        Manage your category
-                      </p>
-                    </div>
-                  </div>
-                  <ChevronRightIcon className="w-5 h-5 text-gray-400" />
-                </article>
-              ))}
-          </div>
-        </div>
+        <SettingGroup title="Transaction">
+          {[...Array(3).keys()].map((item) => (
+            <SettingItem
+              key={item}
+              title="Category"
+              subtitle="Manage your category"
+              icon={Squares2X2Icon}
+            />
+          ))}
+        </SettingGroup>
+        <SettingGroup title="Authentication">
+          <SettingItem
+            title="Logout"
+            subtitle="Sign out from your account"
+            iconWrapperClass="bg-red-500"
+            icon={ArrowRightOnRectangleIcon}
+          />
+        </SettingGroup>
       </section>
     </div>
   );
