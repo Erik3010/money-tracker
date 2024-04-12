@@ -1,13 +1,14 @@
-import { HomeIcon as HeroIcon } from "@heroicons/react/20/solid";
+// import { HomeIcon as HeroIcon } from "@heroicons/react/20/solid";
+import { type Icon } from "@money-tracker-types/index";
 import { NavLink } from "react-router-dom";
 
 interface NavItemProps {
   label: string;
   to: string;
-  Icon: typeof HeroIcon;
+  icon: Icon;
 }
 
-const NavItem = ({ label, to, Icon }: NavItemProps) => {
+const NavItem = ({ label, to, icon: Icon }: NavItemProps) => {
   return (
     <NavLink
       to={to}
