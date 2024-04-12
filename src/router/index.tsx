@@ -44,6 +44,17 @@ const routes = [
   },
   {
     ...routeItemProps,
+    path: "transactions",
+    element: <Root showNavbar={false} />,
+    children: [
+      {
+        path: "new",
+        element: <TransactionNew />,
+      },
+    ],
+  },
+  {
+    ...routeItemProps,
     path: "/",
     element: <Root showNavbar={false} />,
     children: [
@@ -54,17 +65,6 @@ const routes = [
       {
         path: "register",
         element: <Register />,
-      },
-    ],
-  },
-  {
-    ...routeItemProps,
-    path: "transactions",
-    element: <Root showNavbar={false} />,
-    children: [
-      {
-        path: "new",
-        element: <TransactionNew />,
       },
     ],
   },
