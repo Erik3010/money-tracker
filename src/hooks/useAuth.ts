@@ -1,35 +1,25 @@
 import { useEffect } from "react";
-import { useAuthStore } from "../store/auth";
+import { useAuthStore } from "@stores/auth";
 import supabase from "@libs/supabaseClient";
-import { type Session } from "@supabase/supabase-js";
+import { type Session, type User } from "@supabase/supabase-js";
 
 export const useAuth = (): {
   session: Session | null;
+  user: User | null;
   isAuthenticated: boolean;
 } => {
-  const { session, setSession } = useAuthStore();
+  const { session, user, setSession } = useAuthStore();
   const isAuthenticated = session !== null;
 
   useEffect(() => {
-    const getUserSession = async () => {
+    const fetchUserSession = async () => {
       const { data } = await supabase.auth.getSession();
       const userSession = data?.session || null;
       setSession(userSession);
     };
 
-    const { data: authListener } = supabase.auth.onAuthStateChange(
-      async (event, session) => {
-        console.log(event);
-        setSession(session);
-      }
-    );
-
-    getUserSession();
-
-    return () => {
-      authListener.subscription.unsubscribe();
-    };
+    fetchUserSession();
   }, [setSession]);
 
-  return { session, isAuthenticated };
+  return { session, user, isAuthenticated };
 };

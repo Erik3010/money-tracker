@@ -1,8 +1,9 @@
 import { create } from "zustand";
-import { type Session } from "@supabase/supabase-js";
+import { type Session, type User } from "@supabase/supabase-js";
 
 type AuthState = {
   session: Session | null;
+  user: User | null;
 };
 
 type AuthAction = {
@@ -11,5 +12,7 @@ type AuthAction = {
 
 export const useAuthStore = create<AuthState & AuthAction>((set) => ({
   session: null,
-  setSession: (session: Session | null) => set({ session }),
+  user: null,
+  setSession: (session: Session | null) =>
+    set({ session, user: session?.user ?? null }),
 }));

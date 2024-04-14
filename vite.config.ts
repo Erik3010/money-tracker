@@ -17,6 +17,7 @@ export default defineConfig({
       "@router": resolve(root, "router"),
       "@utils": resolve(root, "utils"),
       "@libs": resolve(root, "libs"),
+      "@stores": resolve(root, "stores"),
       "@money-tracker-types": resolve(root, "types"),
     },
   },

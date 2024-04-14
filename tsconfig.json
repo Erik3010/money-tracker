@@ -29,6 +29,7 @@
       "@router/*": ["./src/router/*"],
       "@utils/*": ["./src/utils/*"],
       "@libs/*": ["./src/libs/*"],
+      "@stores/*": ["./src/stores/*"],
       "@money-tracker-types/*": ["./src/types/*"],
     }
   },
