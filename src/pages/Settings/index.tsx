@@ -16,6 +16,7 @@ const Setting = () => {
         <SettingGroup title="Transaction">
           {[...Array(3).keys()].map((item) => (
             <SettingItem
+              to="/transactions"
               key={item}
               title="Category"
               subtitle="Manage your category"
@@ -29,6 +30,7 @@ const Setting = () => {
             subtitle="Sign out from your account"
             iconWrapperClass="bg-red-500"
             icon={ArrowRightOnRectangleIcon}
+            onClick={() => console.log("Logout")}
           />
         </SettingGroup>
       </section>

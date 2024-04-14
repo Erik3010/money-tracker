@@ -1,5 +1,6 @@
 import { ChevronRightIcon } from "@heroicons/react/20/solid";
 import { type Icon } from "@money-tracker-types/index";
+import { Link, type To } from "react-router-dom";
 import { cn } from "@utils/index";
 
 interface SettingItemProps {
@@ -7,17 +8,46 @@ interface SettingItemProps {
   subtitle?: string;
   iconWrapperClass?: string;
   icon: Icon;
+  onClick?: (event: React.MouseEvent) => void;
+  to?: To;
 }
+type SettingItemContentProps = Pick<
+  SettingItemProps,
+  "title" | "subtitle" | "iconWrapperClass" | "icon"
+>;
 
-const SettingItem = ({
+const CONTAINER_CLASS =
+  "w-full flex justify-between items-center px-4 py-3.5 hover:bg-gray-50 cursor-pointer";
+
+const SettingItem = ({ onClick, to, ...props }: SettingItemProps) => {
+  const isLink = !!to;
+  const content = <SettingItemContent {...props} />;
+  const containerProps = { className: CONTAINER_CLASS };
+
+  if (isLink) {
+    return (
+      <Link to={to} {...containerProps}>
+        {content}
+      </Link>
+    );
+  }
+
+  return (
+    <button {...containerProps} onClick={onClick}>
+      {content}
+    </button>
+  );
+};
+
+const SettingItemContent = ({
   title,
   subtitle,
   iconWrapperClass = "bg-blue-500",
   icon: Icon,
-}: SettingItemProps) => {
+}: SettingItemContentProps) => {
   return (
-    <article className="flex justify-between items-center px-4 py-3.5 hover:bg-gray-50 cursor-pointer">
-      <div className="flex items-center gap-x-3.5 text-sm">
+    <>
+      <div className="flex items-center gap-x-3.5 text-sm text-left">
         <div className={cn("rounded-lg p-2", iconWrapperClass)}>
           <Icon className="w-4 h-4 text-white" />
         </div>
@@ -27,7 +57,7 @@ const SettingItem = ({
         </div>
       </div>
       <ChevronRightIcon className="w-5 h-5 text-gray-400" />
-    </article>
+    </>
   );
 };
 
