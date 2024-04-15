@@ -1,9 +1,9 @@
 import { RouterProvider } from "react-router-dom";
 import { router } from "@router/index.tsx";
-import { useSubscribeAuth } from "@hooks/useSubscribeAuth";
+import { useInitializeAuth } from "@hooks/useInitializeAuth";
 
 const App = () => {
-  useSubscribeAuth();
+  useInitializeAuth();
 
   return (
     <>

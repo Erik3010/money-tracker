@@ -17,7 +17,14 @@ const Button = ({
 }: ButtonProps) => {
   return (
     <button className={cn(buttonClass, className)} {...props}>
-      {loading ? <Loader /> : <span>{children}</span>}
+      {loading ? (
+        <Loader
+          className="h-6 w-6 text-white stroke-2"
+          strokeColor="stroke-white"
+        />
+      ) : (
+        <span>{children}</span>
+      )}
     </button>
   );
 };

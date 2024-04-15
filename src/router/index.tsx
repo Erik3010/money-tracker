@@ -10,6 +10,7 @@ import Report from "@pages/Report";
 import Setting from "@pages/Settings";
 import Login from "@pages/Auth/Login";
 import Register from "@pages/Auth/Register";
+import ProtectedRoute from "@components/Auth/ProtectedRoute";
 
 const routeItemProps = { errorElement: <Error /> };
 
@@ -17,26 +18,17 @@ const routes = [
   {
     ...routeItemProps,
     path: "/",
-    element: <Root />,
+    element: <ProtectedRoute />,
     children: [
       {
-        index: true,
-        element: <Home />,
-      },
-      {
-        path: "report",
-        element: <Report />,
-      },
-      {
-        path: "settings",
-        element: <Setting />,
-      },
-      {
-        path: "transactions",
+        element: <Root />,
         children: [
+          { index: true, element: <Home /> },
+          { path: "report", element: <Report /> },
+          { path: "settings", element: <Setting /> },
           {
-            index: true,
-            element: <TransactionIndex />,
+            path: "transactions",
+            children: [{ index: true, element: <TransactionIndex /> }],
           },
         ],
       },
@@ -45,11 +37,12 @@ const routes = [
   {
     ...routeItemProps,
     path: "transactions",
-    element: <Root showNavbar={false} />,
+    element: <ProtectedRoute />,
     children: [
       {
         path: "new",
-        element: <TransactionNew />,
+        element: <Root showNavbar={false} />,
+        children: [{ index: true, element: <TransactionNew /> }],
       },
     ],
   },
@@ -58,14 +51,8 @@ const routes = [
     path: "/",
     element: <Root showNavbar={false} />,
     children: [
-      {
-        path: "login",
-        element: <Login />,
-      },
-      {
-        path: "register",
-        element: <Register />,
-      },
+      { path: "login", element: <Login /> },
+      { path: "register", element: <Register /> },
     ],
   },
 ];

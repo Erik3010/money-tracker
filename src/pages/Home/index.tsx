@@ -1,11 +1,8 @@
 import BalanceCard from "@components/Shared/BalanceCard";
 import TransactionCard from "@components/Shared/TransactionCard";
-import { useAuth } from "@hooks/useAuth";
 import { NavLink } from "react-router-dom";
 
 const Home = () => {
-  const { session } = useAuth();
-
   return (
     <>
       <div className="space-y-8">

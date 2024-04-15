@@ -1,7 +1,13 @@
-const Loader = () => {
+import { cn } from "@utils/index";
+
+interface LoaderProps extends React.SVGProps<SVGSVGElement> {
+  strokeColor: string;
+}
+
+const Loader = ({ className, strokeColor }: LoaderProps) => {
   return (
     <svg
-      className="animate-spin h-6 w-6 text-white stroke-2"
+      className={cn("animate-spin", className)}
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
@@ -12,7 +18,7 @@ const Loader = () => {
       />
       <path
         d="M12 2C6.47715 2 2 6.47715 2 12C2 14.7255 3.09032 17.1962 4.85857 19"
-        className="stroke-white"
+        className={strokeColor}
       />
     </svg>
   );
