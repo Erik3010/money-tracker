@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "@components/Shared/Button";
 import Input from "@components/Shared/Input";
 import useForm from "@hooks/useForm";
@@ -6,6 +6,8 @@ import supabase from "../../../libs/supabaseClient";
 import { AuthForm } from "@money-tracker-types/index";
 
 const Login = () => {
+  const navigate = useNavigate();
+
   const handleSubmit = async ({ email, password }: AuthForm) => {
     if (!email || !password) return;
 
@@ -14,6 +16,7 @@ const Login = () => {
       password,
     });
     console.log(response);
+    navigate("/");
   };
 
   const {
