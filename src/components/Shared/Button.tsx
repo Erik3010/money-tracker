@@ -7,7 +7,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const buttonClass =
-  "w-full rounded-md bg-blue-500 px-3.5 py-3.5 text-sm font-semibold text-white shadow-sm enabled:hover:bg-blue-600 leading-none flex justify-center items-center space-x-2.5 disabled:opacity-75 disabled:cursor-not-allowed";
+  "w-full h-11 rounded-md bg-blue-500 px-3.5 py-3.5 text-sm font-semibold text-white shadow-sm enabled:hover:bg-blue-600 leading-none flex justify-center items-center space-x-2.5 disabled:opacity-75 disabled:cursor-not-allowed";
 
 const Button = ({
   className,
@@ -17,7 +17,7 @@ const Button = ({
 }: ButtonProps) => {
   return (
     <button className={cn(buttonClass, className)} {...props}>
-      {loading && <Loader />} <span>{children}</span>
+      {loading ? <Loader /> : <span>{children}</span>}
     </button>
   );
 };
