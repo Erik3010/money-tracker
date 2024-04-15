@@ -4,8 +4,14 @@ import {
 } from "@heroicons/react/20/solid";
 import SettingGroup from "./components/SettingGroup";
 import SettingItem from "./components/SettingItem";
+import supabase from "@libs/supabaseClient";
 
 const Setting = () => {
+  const handleLogout = async () => {
+    const { error } = await supabase.auth.signOut();
+    console.log(error);
+  };
+
   return (
     <div>
       <div className="mb-6 space-y-0.5">
@@ -30,7 +36,7 @@ const Setting = () => {
             subtitle="Sign out from your account"
             iconWrapperClass="bg-red-500"
             icon={ArrowRightOnRectangleIcon}
-            onClick={() => console.log("Logout")}
+            onClick={handleLogout}
           />
         </SettingGroup>
       </section>

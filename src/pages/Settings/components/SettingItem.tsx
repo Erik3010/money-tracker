@@ -51,7 +51,7 @@ const SettingItemContent = ({
         <div className={cn("rounded-lg p-2", iconWrapperClass)}>
           <Icon className="w-4 h-4 text-white" />
         </div>
-        <div>
+        <div className="space-y-0.5">
           <h3 className="font-semibold">{title}</h3>
           {subtitle && <p className="text-xs text-gray-400">{subtitle}</p>}
         </div>
