@@ -11,6 +11,7 @@ import Setting from "@pages/Settings";
 import Login from "@pages/Auth/Login";
 import Register from "@pages/Auth/Register";
 import ProtectedRoute from "@components/Auth/ProtectedRoute";
+import PublicRoute from "@components/Auth/PublicRoute";
 
 const routeItemProps = { errorElement: <Error /> };
 
@@ -49,10 +50,15 @@ const routes = [
   {
     ...routeItemProps,
     path: "/",
-    element: <Root showNavbar={false} />,
+    element: <PublicRoute />,
     children: [
-      { path: "login", element: <Login /> },
-      { path: "register", element: <Register /> },
+      {
+        element: <Root showNavbar={false} />,
+        children: [
+          { path: "login", element: <Login /> },
+          { path: "register", element: <Register /> },
+        ],
+      },
     ],
   },
 ];

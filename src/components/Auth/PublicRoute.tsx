@@ -1,5 +1,6 @@
-import { useAuthStore } from "@stores/auth";
 import { Navigate, Outlet } from "react-router-dom";
+import { useAuthStore } from "@stores/auth";
+import Spinner from "@pages/Spinner";
 
 const PublicRoute = () => {
   const { user, isLoading } = useAuthStore(({ user, isLoading }) => ({
@@ -7,7 +8,7 @@ const PublicRoute = () => {
     isLoading,
   }));
 
-  if (isLoading) return;
+  if (isLoading) return <Spinner />;
 
   return user ? <Navigate to="/" replace /> : <Outlet />;
 };
