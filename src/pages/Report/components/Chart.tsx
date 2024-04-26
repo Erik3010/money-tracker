@@ -1,5 +1,9 @@
 import { formatCurrency } from "@utils/index";
 import {
+  ArrowDownCircleIcon,
+  ArrowUpCircleIcon,
+} from "@heroicons/react/20/solid";
+import {
   CartesianGrid,
   Line,
   LineChart,
@@ -13,10 +17,6 @@ import {
   NameType,
   ValueType,
 } from "recharts/types/component/DefaultTooltipContent";
-import {
-  ArrowDownCircleIcon,
-  ArrowUpCircleIcon,
-} from "@heroicons/react/20/solid";
 
 const CustomTooltip = ({
   active,
