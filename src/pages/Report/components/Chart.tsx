@@ -27,6 +27,7 @@ const CustomTooltip = ({
   const {
     payload: { date, outcome, income },
   } = payload[0];
+
   return (
     <div className="rounded-lg border bg-white shadow-sm p-2.5 space-y-2">
       <h2 className="text-xs font-semibold text-gray-400 uppercase">{date}</h2>
