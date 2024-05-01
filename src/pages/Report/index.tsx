@@ -34,10 +34,10 @@ const Report = () => {
               <p className="text-xs uppercase font-semibold text-gray-400">
                 March
               </p>
-              <h1 className="font-semibold text-base text-gray-900 space-x-1">
+              <h2 className="font-semibold text-base text-gray-900 space-x-1">
                 <span className="text-sm text-gray-400 font-semibold">Rp</span>
                 <span>250.000</span>
-              </h1>
+              </h2>
             </div>
             <button className="p-0.5 rounded-full border text-gray-400 hover:bg-gray-100 flex items-center justify-center">
               <ChevronRightIcon className="w-5 h-5" />
@@ -47,10 +47,10 @@ const Report = () => {
             <p className="text-xs uppercase font-semibold text-gray-400">
               Spend per day
             </p>
-            <h1 className="font-semibold text-base text-gray-900 space-x-1">
+            <h2 className="font-semibold text-base text-gray-900 space-x-1">
               <span className="text-sm text-gray-400 font-semibold">Rp</span>
               <span>250.000</span>
-            </h1>
+            </h2>
           </div>
         </section>
         <section className="h-52">
