@@ -5,9 +5,9 @@ import { noop } from "@utils/index";
 
 import TransactionList from "@pages/Transaction/components/TransactionList";
 import CategoryCard from "./components/CategoryCard";
+import Chart from "./components/Chart";
 import * as Accordion from "@radix-ui/react-accordion";
 import * as Tabs from "@radix-ui/react-tabs";
-import Chart from "./components/Chart";
 
 const Report = () => {
   return (
