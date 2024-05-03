@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import AmountField, { AmountFieldValue } from "@components/Shared/AmountField";
 import DatePicker from "@components/Shared/Datepicker";
 import { TRANSACTION_CATEGORY, transactionTypes } from "@constants/index";
@@ -6,7 +7,6 @@ import TransactionTypeRadio from "@pages/TransactionCreate/components/Transactio
 import { ChangeEvent, useRef, useState } from "react";
 import SelectField from "@components/Shared/SelectField";
 import { ChevronLeftIcon } from "@heroicons/react/20/solid";
-import { useNavigate } from "react-router-dom";
 import Button from "@components/Shared/Button";
 
 const TransactionNew = () => {
