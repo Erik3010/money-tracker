@@ -11,7 +11,6 @@ import Button from "@components/Shared/Button";
 
 const TransactionNew = () => {
   const navigate = useNavigate();
-
   const today = useRef(new Date());
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
