@@ -28,6 +28,10 @@ export default {
         "fade-out": "fadeOut 0.15s ease-in-out",
         "zoom-in": "zoomIn 0.15s ease-in-out, fadeIn 0.15s ease-in-out",
         "zoom-out": "zoomOut 0.15s ease-in-out, fadeOut 0.15s ease-in-out",
+        "accordion-slide-down":
+          "accordionSlideDown 0.3s cubic-bezier(0.87, 0, 0.13, 1)",
+        "accordion-slide-up":
+          "accordionSlideUp 0.3s cubic-bezier(0.87, 0, 0.13, 1)",
       },
       keyframes: {
         fadeIn: { from: { opacity: 0 }, to: { opacity: 1 } },
@@ -39,6 +43,14 @@ export default {
         zoomOut: {
           from: { scale: "1" },
           to: { scale: "0.95" },
+        },
+        accordionSlideDown: {
+          from: { height: 0 },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        accordionSlideUp: {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: 0 },
         },
       },
     },

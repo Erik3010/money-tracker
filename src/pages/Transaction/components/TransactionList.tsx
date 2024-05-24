@@ -23,10 +23,9 @@ const TransactionList = ({ date = "Today" }: TransactionListProps) => {
             <span className="text-xs text-gray-400 font-semibold">Rp</span>{" "}
             250.000
           </h2>
-          {/* <ChevronUpIcon className="accordion-chevron h-4 w-4 text-gray-500" /> */}
         </div>
       </Accordion.Trigger>
-      <Accordion.Content className="accordion-content divide-y divide-gray-100 px-4">
+      <Accordion.Content className="data-[state=open]:animate-accordion-slide-down data-[state=closed]:animate-accordion-slide-up divide-y divide-gray-100 px-4">
         {Array(5)
           .fill(null)
           .map((_, index) => (

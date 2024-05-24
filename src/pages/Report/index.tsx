@@ -63,13 +63,13 @@ const Report = () => {
         <Tabs.Root defaultValue="transaction">
           <Tabs.List className="grid grid-cols-2 bg-gray-200 rounded-lg p-1">
             <Tabs.Trigger
-              className="tabs-trigger leading-relaxed rounded-md transition flex items-center justify-center text-center font-semibold text-sm py-1 text-gray-500 hover:text-gray-900"
+              className="leading-relaxed rounded-md transition flex items-center justify-center text-center font-semibold text-sm py-1 text-gray-500 hover:text-gray-900 data-[state=active]:bg-white data-[state=active]:text-gray-900 data-[state=active]:shadow-sm"
               value="transaction"
             >
               Transaction
             </Tabs.Trigger>
             <Tabs.Trigger
-              className="tabs-trigger leading-relaxed rounded-md transition flex items-center justify-center text-center font-semibold text-sm py-1 text-gray-500 hover:text-gray-900"
+              className="leading-relaxed rounded-md transition flex items-center justify-center text-center font-semibold text-sm py-1 text-gray-500 hover:text-gray-900 data-[state=active]:bg-white data-[state=active]:text-gray-900 data-[state=active]:shadow-sm"
               value="category"
             >
               Category
