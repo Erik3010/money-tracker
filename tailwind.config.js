@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       screens: {
-        xs: '400px'
+        xs: "400px",
       },
       colors: {
         blue: {
@@ -23,8 +23,25 @@ export default {
       fontFamily: {
         sans: ["Inter"],
       },
+      animation: {
+        "fade-in": "fadeIn 0.15s ease-in-out",
+        "fade-out": "fadeOut 0.15s ease-in-out",
+        "zoom-in": "zoomIn 0.15s ease-in-out, fadeIn 0.15s ease-in-out",
+        "zoom-out": "zoomOut 0.15s ease-in-out, fadeOut 0.15s ease-in-out",
+      },
+      keyframes: {
+        fadeIn: { from: { opacity: 0 }, to: { opacity: 1 } },
+        fadeOut: { from: { opacity: 1 }, to: { opacity: 0 } },
+        zoomIn: {
+          from: { scale: "0.95" },
+          to: { scale: "1" },
+        },
+        zoomOut: {
+          from: { scale: "1" },
+          to: { scale: "0.95" },
+        },
+      },
     },
   },
   plugins: [],
 };
-

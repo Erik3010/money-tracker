@@ -13,7 +13,7 @@ const NavItem = ({ label, to, icon: Icon }: NavItemProps) => {
     <NavLink
       to={to}
       end
-      className="nav-link flex flex-col items-center text-center text-gray-400 hover:text-blue-500 transition-colors"
+      className="flex flex-col items-center text-center text-gray-400 hover:text-blue-500 transition-colors [&.active]:text-blue-700"
     >
       <Icon className="w-6 h-6" />
       <span className="text-xs mt-1">{label}</span>

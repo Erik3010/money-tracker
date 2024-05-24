@@ -52,9 +52,10 @@ const SelectField = ({
           <ChevronUpDownIcon className="h-4 w-4 ml-2" />
         </Select.Icon>
         <Select.Portal>
+          {/* Select component exit animation doesn't work. Follow up on https://github.com/radix-ui/primitives/issues/1893 */}
           <Select.Content
             position="popper"
-            className="scale-in bg-white shadow border p-1.5 rounded-md w-full min-w-[var(--radix-select-trigger-width)] data-[side=bottom]:translate-y-1 data-[side=top]:-translate-y-1"
+            className="data-[state=open]:animate-zoom-in data-[state=closed]:animate-zoom-out bg-white shadow border p-1.5 rounded-md w-full min-w-[var(--radix-select-trigger-width)] data-[side=bottom]:translate-y-1 data-[side=top]:-translate-y-1"
           >
             <Select.Viewport>
               {items.map((item) => (
