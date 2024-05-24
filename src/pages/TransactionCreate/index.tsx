@@ -106,7 +106,7 @@ const TransactionNew = () => {
           ></textarea>
         </div>
       </div>
-      <Button>
+      <Button full>
         Add your <span className="capitalize">{transactionType}</span>
       </Button>
     </div>

@@ -60,7 +60,7 @@ const Register = () => {
             />
           </div>
         </div>
-        <Button loading={isLoading} disabled={isLoading} type="submit">
+        <Button full loading={isLoading} disabled={isLoading} type="submit">
           Sign Up
         </Button>
         <div className="text-center text-sm text-gray-600">

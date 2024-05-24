@@ -63,7 +63,7 @@ const Login = () => {
             />
           </div>
         </div>
-        <Button loading={isLoading} disabled={isLoading}>
+        <Button full loading={isLoading} disabled={isLoading}>
           Sign In
         </Button>
         <div className="text-center text-sm text-gray-600">
