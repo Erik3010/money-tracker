@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Button from "@components/Shared/Button";
 import Input from "@components/Shared/Input";
 import useForm from "@hooks/useForm";
-import supabase from "../../../libs/supabaseClient";
+import supabase from "@libs/supabaseClient";
 import { AuthForm } from "@money-tracker-types/index";
 
 const Login = () => {
