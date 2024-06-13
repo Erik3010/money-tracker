@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 
-import ProtectedRoute from "@components/Auth/ProtectedRoute";
 import PublicRoute from "@components/Auth/PublicRoute";
+import ProtectedRoute from "@components/Auth/ProtectedRoute";
 
 import Root from "@layouts/Root.tsx";
 import Error from "@pages/Error";
