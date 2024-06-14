@@ -4,7 +4,6 @@ import PublicRoute from "@components/Auth/PublicRoute";
 import ProtectedRoute from "@components/Auth/ProtectedRoute";
 
 import Root from "@layouts/Root.tsx";
-import Error from "@pages/Error";
 
 import Home from "@pages/Home";
 import Login from "@pages/Auth/Login";
@@ -13,6 +12,7 @@ import TransactionIndex from "@pages/Transaction";
 import TransactionNew from "@pages/TransactionCreate";
 import Report from "@pages/Report";
 import Setting from "@pages/Settings";
+import Error from "@pages/Error";
 
 const routeItemProps = { errorElement: <Error /> };
 
